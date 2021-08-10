@@ -1,0 +1,13 @@
+id_client,name_client,firstname_client,birthdate_client,address_client,city_client,email_client,phone_client,comment_client
+1,Hoareau,Nicolas,25/07/1974,"31 Allée de la Cressonnière","Saint-Laurent-Sur-Sèvre (85290)",nhoareau@gmail.com,0,NULL
+2,Armand,Joël,13/04/1985,"49 Rue de Dijon","Saint-Aybert (59163)",joel.armand@yahoo.fr,NULL,NULL
+3,Gallet,Janine,"22/09/1984 ","42 Chemin de la Tremblaie","Saint-Germain-sous-Cailly (76690)",janine.gallet@orange.fr,NULL,NULL
+4,Stephan,Constant,28/09/1974,"1 Impasse de la Coudre","Martincourt (60112)",c.stephan@gmail.com,123456789,NULL
+5,Imbert,Hector,29/07/1986,"4 Chemin des Anglais","Courgeon (61400)",hector@orange.fr,654321245,NULL
+7,Jarry,Philippine,08/11/1998,"43 Rue Richeux","Jansac (26310)",philipinne@orange.fr,NULL,NULL
+8,Goldman,Jean-Jacques,11/10/1951,NULL,"Au chateau (69569)",jjg@gmail.com,NULL,NULL
+9,Hoareau,Blobi,25/07/1974,"31 Allée de la Cressonnière","Saint-Laurent-Sur-Sèvre (85290)",nhoareau@gmail.com,0,NULL
+10,Hoareau,Blobi,25/07/1974,"31 Allée de la Cressonnière","Saint-Laurent-Sur-Sèvre (85290)",nhoareau@gmail.com,0,NULL
+11,Hoareau,Blobi,25/07/1974,"31 Allée de la Cressonnière","Saint-Laurent-Sur-Sèvre (85290)",nhoareau@gmail.com,0,NULL
+12,Hoareau,Blobi,25/07/1974,"31 Allée de la Cressonnière","Saint-Laurent-Sur-Sèvre (85290)",nhoareau@gmail.com,0,NULL
+13,Hoareau,Blobu,25/07/1974,"31 Allée de la Cressonnière","Saint-Laurent-Sur-Sèvre (85290)",nhoareau@gmail.com,0,NULL
