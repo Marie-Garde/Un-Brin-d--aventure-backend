@@ -13,7 +13,7 @@ CREATE TABLE `Un_Brin_De_Folie`.`client` (
   `comment_client` VARCHAR(2000) NULL,
   PRIMARY KEY (`id_client`));
 
-CREATE TABLE `Un_Brin_De_Folier`.`achats` (
+CREATE TABLE `Un_Brin_De_Folie`.`achats` (
   `id_achat` INT NOT NULL AUTO_INCREMENT,
   `type_achat` VARCHAR(200) NOT NULL,
   `date_achat` VARCHAR(200) NOT NULL,
@@ -21,4 +21,5 @@ CREATE TABLE `Un_Brin_De_Folier`.`achats` (
   `comment_achat` VARCHAR(2000) NULL,
   `achatscol` VARCHAR(45) NULL,
   `client_id_client` INT(11) NOT NULL,
-  PRIMARY KEY (`id_achat`));
+  PRIMARY KEY (`id_achat`),
+  FOREIGN KEY (`client_id_client`) REFERENCES `Un_Brin_De_Folie`.`client`(`id_client`));
