@@ -1,7 +1,7 @@
 CREATE DATABASE  IF NOT EXISTS `Un_Brin_De_Folie` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `Un_Brin_De_Folie`;
 
-CREATE TABLE `Un_Brin_De_Folie`.`client` (
+CREATE TABLE `Un_Brin_De_Folie`.`clients` (
   `id_client` INT NOT NULL AUTO_INCREMENT,
   `name_client` VARCHAR(200) NOT NULL,
   `firstname_client` VARCHAR(200) NOT NULL,
