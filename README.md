@@ -10,6 +10,8 @@ In insomnia, import json file in `/colletion` to start testing api requests.
 - [x] get customer by id : GET request to `/api/customers/:id`
 - [x] get customer with optional parameters research : GET request to `/api/customers/name/:name?/firstname/:firstname?/city/:city?/email/:email?`
 - [x] post a new customer : POST request to `/api/customers/new`
+- [x] update an existing customer : PUT request to `/api/customers/update`
+- [x] delete a customer : DELETE request to `/api/customers/:id`
 
 ##### Purchases
 
