@@ -53,7 +53,7 @@ router.delete("/:id", (req, res) => {
     (err, results) => {
       if (err) {
         console.log(err);
-        res.status(500).send("Error retrieving data");
+        res.status(500).send("Error deleting data");
       } else {
         res.status(200).json(results);
       }
@@ -65,12 +65,12 @@ router.delete("/:id", (req, res) => {
 router.post("/:id", (req, res) => {
   const { type, date, quantity, comment } = req.body;
   db.query(
-    "INSERT INTO achats(type_achat, date_achat, quantity_achat, comment_achat, client_id_client) VALUES(?, ?, ?, ?, ?)",
-    [type, date, quantity, comment, req.params.id],
+    "INSERT INTO achats(date_achat, type_achat, quantity_achat, comment_achat, client_id_client) VALUES(?, ?, ?, ?, ?)",
+    [date, type, quantity, comment, req.params.id],
     (err, result) => {
       if (err) {
         console.log(err);
-        res.status(500).send("Error");
+        res.status(500).send("Error posting data");
       } else {
         res.status(201).send("Successfully saved");
       }

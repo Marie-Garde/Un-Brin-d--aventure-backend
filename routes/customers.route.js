@@ -68,7 +68,7 @@ router.post("/new", (req, res) => {
     (err, result) => {
       if (err) {
         console.log(err);
-        res.status(500).send("Error");
+        res.status(500).send("Error posting data");
       } else {
         res.status(201).send("Successfully saved");
       }
