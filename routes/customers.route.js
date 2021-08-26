@@ -76,4 +76,55 @@ router.post("/new", (req, res) => {
   );
 });
 
+// update an existing client
+router.put("/update", (req, res) => {
+  const {
+    id,
+    name,
+    firstname,
+    birthdate,
+    address,
+    city,
+    email,
+    phone,
+    comment,
+  } = req.body;
+  const formatedString = (str) => {
+    return str.replace(/'/g, "''");
+  };
+  db.query(
+    `UPDATE clients SET name_client='${name}', firstname_client='${firstname}', birthdate_client='${birthdate}', address_client='${formatedString(
+      address
+    )}', city_client='${formatedString(
+      city
+    )}', email_client='${email}', phone_client='${phone}', comment_client='${formatedString(
+      comment
+    )}'`,
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error");
+      } else {
+        res.status(201).send("Successfully saved");
+      }
+    }
+  );
+});
+
+// delete an existing customer
+router.delete("/:id", (req, res) => {
+  db.query(
+    "DELETE from clients WHERE id_client=?",
+    [req.params.id],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving data");
+      } else {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
 module.exports = router;
