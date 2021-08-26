@@ -1,4 +1,4 @@
-id_achat,type_achat,date_achat,quantity_achat,comment_achat,client_id_client
+id_purchase,type_purchase,date_purchase,quantity_purchase,comment_purchase,customer_id_customer
 1,bouquet,12/08/2021,1,NULL,2
 2,composition,16/08/2021,2,commentaire,1
 3,decoration,17/08/2021,1,NULL,5

@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { db } = require("../conf.js");
 
-// Display all clients
+// Display all customers
 router.get("/all", (req, res) => {
-  db.query("SELECT * from clients", (err, results) => {
+  db.query("SELECT * from customers", (err, results) => {
     if (err) {
       res.status(500).send("Error retrieving data");
     } else {
@@ -13,10 +13,10 @@ router.get("/all", (req, res) => {
   });
 });
 
-// Display one client with param id
+// Display one customer with param id
 router.get("/:id", (req, res) => {
   db.query(
-    "SELECT * from clients WHERE id_client=?",
+    "SELECT * from customers WHERE id_customer=?",
     [req.params.id],
     (err, results) => {
       if (err) {
@@ -29,7 +29,7 @@ router.get("/:id", (req, res) => {
   );
 });
 
-// Get a client with optional parameters researchs
+// Get a customer with optional parameters researchs
 router.get(
   "/name/:name?/firstname/:firstname?/city/:city?/email/:email?",
   (req, res) => {
@@ -39,7 +39,7 @@ router.get(
     let email = req.params.email || "";
 
     db.query(
-      "SELECT * from clients WHERE `name_client` LIKE ? && `firstname_client` LIKE ? && `city_client` LIKE ? && `email_client` LIKE ?",
+      "SELECT * from customers WHERE `name_customer` LIKE ? && `firstname_customer` LIKE ? && `city_customer` LIKE ? && `email_customer` LIKE ?",
       [
         "%" + name + "%",
         "%" + firstname + "%",
@@ -58,12 +58,12 @@ router.get(
   }
 );
 
-// Post a new client
+// Post a new customer
 router.post("/new", (req, res) => {
   const { name, firstname, birthdate, address, city, email, phone, comment } =
     req.body;
   db.query(
-    "INSERT INTO clients(name_client, firstname_client, birthdate_client, address_client, city_client, email_client, phone_client, comment_client) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
+    "INSERT INTO customers(name_customer, firstname_customer, birthdate_customer, address_customer, city_customer, email_customer, phone_customer, comment_customer) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
     [name, firstname, birthdate, address, city, email, phone, comment],
     (err, result) => {
       if (err) {
@@ -76,7 +76,7 @@ router.post("/new", (req, res) => {
   );
 });
 
-// update an existing client
+// update an existing customer
 router.put("/update", (req, res) => {
   const {
     id,
@@ -93,11 +93,11 @@ router.put("/update", (req, res) => {
     return str.replace(/'/g, "''");
   };
   db.query(
-    `UPDATE clients SET name_client='${name}', firstname_client='${firstname}', birthdate_client='${birthdate}', address_client='${formatedString(
+    `UPDATE customers SET name_customer='${name}', firstname_customer='${firstname}', birthdate_customer='${birthdate}', address_customer='${formatedString(
       address
-    )}', city_client='${formatedString(
+    )}', city_customer='${formatedString(
       city
-    )}', email_client='${email}', phone_client='${phone}', comment_client='${formatedString(
+    )}', email_customer='${email}', phone_customer='${phone}', comment_customer='${formatedString(
       comment
     )}'`,
     (err, result) => {
@@ -114,7 +114,7 @@ router.put("/update", (req, res) => {
 // delete an existing customer
 router.delete("/:id", (req, res) => {
   db.query(
-    "DELETE from clients WHERE id_client=?",
+    "DELETE from customers WHERE id_customer=?",
     [req.params.id],
     (err, results) => {
       if (err) {

@@ -4,7 +4,7 @@ const { db } = require("../conf.js");
 
 // Display all purchase
 router.get("/all", (req, res) => {
-  db.query("SELECT * from achats", (err, results) => {
+  db.query("SELECT * from purchase", (err, results) => {
     if (err) {
       res.status(500).send("Error retrieving data");
     } else {
@@ -13,10 +13,10 @@ router.get("/all", (req, res) => {
   });
 });
 
-//Display all purchase for one client
+//Display all purchase for one customer
 router.get("/customer/:id", (req, res) => {
   db.query(
-    "SELECT * from achats WHERE client_id_client=?",
+    "SELECT * from purchase WHERE customer_id_customer=?",
     [req.params.id],
     (err, results) => {
       if (err) {
@@ -32,7 +32,7 @@ router.get("/customer/:id", (req, res) => {
 // get purchase by id
 router.get("/:id", (req, res) => {
   db.query(
-    "SELECT * from achats WHERE id_achat=?",
+    "SELECT * from purchase WHERE id_purchase=?",
     [req.params.id],
     (err, results) => {
       if (err) {
@@ -45,10 +45,10 @@ router.get("/:id", (req, res) => {
   );
 });
 
-// Delete a purchase for a client
+// Delete a purchase for a customer
 router.delete("/:id", (req, res) => {
   db.query(
-    "DELETE FROM achats WHERE id_achat=?",
+    "DELETE FROM purchase WHERE id_purchase=?",
     [req.params.id],
     (err, results) => {
       if (err) {
@@ -61,11 +61,11 @@ router.delete("/:id", (req, res) => {
   );
 });
 
-// Post a new purchase for a client
+// Post a new purchase for a customer
 router.post("/:id", (req, res) => {
   const { type, date, quantity, comment } = req.body;
   db.query(
-    "INSERT INTO achats(date_achat, type_achat, quantity_achat, comment_achat, client_id_client) VALUES(?, ?, ?, ?, ?)",
+    "INSERT INTO purchase(date_purchase, type_purchase, quantity_purchase, comment_purchase, customer_id_customer) VALUES(?, ?, ?, ?, ?)",
     [date, type, quantity, comment, req.params.id],
     (err, result) => {
       if (err) {

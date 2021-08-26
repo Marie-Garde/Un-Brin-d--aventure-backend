@@ -1,4 +1,4 @@
-id_client,name_client,firstname_client,birthdate_client,address_client,city_client,email_client,phone_client,comment_client
+id_customer,name_customer,firstname_customer,birthdate_customer,address_customer,city_customer,email_customer,phone_customer,comment_customer
 1,Hoareau,Nicolas,25/07/1974,"31 Allée de la Cressonnière","Saint-Laurent-Sur-Sèvre (85290)",nhoareau@gmail.com,0,NULL
 2,Armand,Joël,13/04/1985,"49 Rue de Dijon","Saint-Aybert (59163)",joel.armand@yahoo.fr,NULL,NULL
 3,Gallet,Janine,"22/09/1984 ","42 Chemin de la Tremblaie","Saint-Germain-sous-Cailly (76690)",janine.gallet@orange.fr,NULL,NULL

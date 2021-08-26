@@ -16,7 +16,7 @@ In insomnia, import json file in `/colletion` to start testing api requests.
 ##### Purchases
 
 - [x] get all purchases : GET request to `/api/purchases`
-- [x] get customer's purchases by id_client : GET request to `/api/purchases/customer/:id_client`
+- [x] get customer's purchases by id_customer : GET request to `/api/purchases/customer/:id_customer`
 - [x] get purchases by id : GET request to `/api/purchases/:id`
 - [x] delete a purchase : DELETE request to `/api/purchases/:id`
-- [x] post a new purchase : POST request to `/api/purchases/:id_client`
+- [x] post a new purchase : POST request to `/api/purchases/:id_customer`
