@@ -45,8 +45,26 @@ router.get("/:id", (req, res) => {
   );
 });
 
-// Delete a purchase for a customer
+// Delete all purchases for a customer
+router.delete("/all/:id", (req, res) => {
+  console.log(req)
+  db.query(
+    "DELETE FROM purchase WHERE customer_id_customer=?",
+    [req.params.id],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error deleting data");
+      } else {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+// Delete one purchase for a customer
 router.delete("/:id", (req, res) => {
+  console.log(req)
   db.query(
     "DELETE FROM purchase WHERE id_purchase=?",
     [req.params.id],
