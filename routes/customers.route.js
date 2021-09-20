@@ -93,13 +93,16 @@ router.put("/update", (req, res) => {
     return str.replace(/'/g, "''");
   };
   db.query(
-    `UPDATE customer SET name_customer='${name}', firstname_customer='${firstname}', birthdate_customer='${birthdate}', address_customer='${formatedString(
+    `UPDATE customer SET name_customer='${formatedString(
+      name
+    )}', firstname_customer='${firstname}', birthdate_customer='${birthdate}', address_customer='${formatedString(
       address
     )}', city_customer='${formatedString(
       city
     )}', email_customer='${email}', phone_customer='${phone}', comment_customer='${formatedString(
       comment
-    )}'`,
+    )}'
+    WHERE id_customer='${id}'`,
     (err, result) => {
       if (err) {
         console.log(err);
